@@ -16,71 +16,93 @@
     <script defer src="./app.js"></script>
   </head>
   <body>
-    <main class="container">
-      <header class="header">
-        <img
-          class="avatar"
-          src="./images/dario.png"
-          alt="Portrait of Dario Car"
-          loading="lazy"
-        />
-        <div class="headerText">
-          <div class="nameRow">
-            <h1 class="name">Dario Car</h1>
-            <ul class="badges" aria-label="Quick links">
-              <li>
-                <a class="badge" href="mailto:dario.car.kz@gmail.com">Email</a>
-              </li>
-              <li>
-                <a
-                  class="badge"
-                  href="https://www.linkedin.com/in/dario-car/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
+    <header class="topbar">
+      <div class="container topbarInner">
+        <nav class="topnav" aria-label="Primary navigation">
+          <a class="toplink" href="#resume">Resume</a>
+          <a class="toplink" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="container heroInner">
+          <aside class="profileCard" aria-label="Profile card">
+            <img
+              class="profileAvatar"
+              src="./images/dario.png"
+              alt="Portrait of Dario Car"
+              loading="lazy"
+            />
+            <div class="profileName">Dario Car</div>
+            <div class="profileRole">Engineering Manager</div>
+          </aside>
+
+          <div class="heroCopy">
+            <h1 id="heroTitle" class="heroTitle">
+              Let’s build great products.
+            </h1>
+            <p class="heroLead">
+              I’m an engineering manager and full-stack engineer with experience
+              across front-end and back-end development—shipping scalable
+              systems, leading teams, and raising the quality bar.
+            </p>
+            <div class="heroCtas">
+              <a class="ctaPrimary" href="mailto:dario.car.kz@gmail.com"
+                >Email</a
+              >
+              <a
+                class="ctaSecondary"
+                href="https://www.linkedin.com/in/dario-car/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
-          <p class="headline">Engineering Manager · Full-stack Engineer</p>
-        </div>
-      </header>
-
-      <section class="card intro" aria-labelledby="introTitle">
-        <h2 id="introTitle">Introduction</h2>
-        <div class="prose">
-          <p>
-            I’m a dedicated software engineer with a diverse background across
-            front-end and back-end development. Over the years, I’ve
-            transitioned from web development to leading teams and managing
-            complex projects.
-          </p>
-          <p>
-            I enjoy tackling challenging problems and continuously
-            improving—building robust, scalable applications with technologies
-            like React, Next.js, Node.js, and cloud services such as AWS and
-            Cloudflare.
-          </p>
-          <p class="muted">
-            Outside of work, I love animals, crime novels, hiking, and cycling.
-            If you’d like to collaborate, let’s connect.
-          </p>
         </div>
       </section>
 
-      <section class="card" aria-labelledby="positionsTitle">
-        <h2 id="positionsTitle">Experience</h2>
-        <div id="positions" class="stack" aria-live="polite">
-          <p class="muted">Loading…</p>
-        </div>
-        <div class="actions">
-          <a id="loadMore" class="loadMore" href="#" hidden>Show more</a>
+      <section id="resume" class="section" aria-labelledby="positionsTitle">
+        <div class="container">
+          <h2 id="positionsTitle" class="sectionTitle">Resume</h2>
+          <div class="resumeGrid">
+            <div class="resumeLabel">Work experience</div>
+            <div class="resumeContent">
+              <div id="positions" class="stack" aria-live="polite">
+                <p class="muted">Loading…</p>
+              </div>
+              <div class="actions">
+                <a id="loadMore" class="loadMore" href="#" hidden>Show more</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer class="card footerCard" aria-label="Footer">
-        <div class="footerInner muted">© <span id="year"></span></div>
+      <footer id="contact" class="footer" aria-label="Footer">
+        <div class="container footerInner">
+          <div class="footerLinks">
+            <a
+              class="footerIcon"
+              href="mailto:dario.car.kz@gmail.com"
+              aria-label="Email"
+              >Email</a
+            >
+            <a
+              class="footerIcon"
+              href="https://www.linkedin.com/in/dario-car/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              LinkedIn
+            </a>
+          </div>
+          <div class="footerYear">© <span id="year"></span></div>
+        </div>
       </footer>
     </main>
   </body>

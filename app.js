@@ -39,51 +39,68 @@
       return;
     }
 
-    const list = el("ol", { class: "positionList" });
+    const visible = positions.slice(0, visibleCount);
 
-    positions.slice(0, visibleCount).forEach((p) => {
-      const title = String(p?.title ?? "").trim();
+    // Group *consecutive* roles by company (promotion/role changes).
+    const groups = [];
+    for (const p of visible) {
       const company = String(p?.company ?? "").trim();
       const location = String(p?.location ?? "").trim();
-      const start = String(p?.start ?? "").trim();
-      const end = String(p?.end ?? "").trim();
-      const highlights = Array.isArray(p?.highlights) ? p.highlights : [];
 
-      const dateText = [formatDate(start), formatDate(end)]
-        .filter(Boolean)
-        .join(" — ");
+      const prev = groups.at(-1);
+      if (prev && prev.company === company && prev.location === location) {
+        prev.roles.push(p);
+      } else {
+        groups.push({ company, location, roles: [p] });
+      }
+    }
 
-      const headerBits = [];
-      if (title) headerBits.push(title);
-      if (company) headerBits.push(company);
+    const list = el("ol", { class: "companyList" });
 
-      const li = el("li", { class: "positionItem" }, [
-        el("div", { class: "positionTop" }, [
-          el("div", {
-            class: "positionRole",
-            text: headerBits.join(" · ") || "Position",
-          }),
-          dateText
-            ? el("div", { class: "positionDates", text: dateText })
-            : el("div", { class: "positionDates" }),
-        ]),
-        location
-          ? el("div", { class: "positionMeta", text: location })
-          : el("div", { class: "positionMeta" }),
+    groups.forEach((g) => {
+      const companyTitle = g.company || "Company";
+      const li = el("li", { class: "companyItem" }, [
+        el("div", { class: "companyName", text: companyTitle }),
+        g.location
+          ? el("div", { class: "companyMeta", text: g.location })
+          : el("div", { class: "companyMeta" }),
       ]);
 
-      if (highlights.length > 0) {
-        const ul = el(
-          "ul",
-          { class: "highlights" },
-          highlights
-            .map((h) => String(h ?? "").trim())
-            .filter(Boolean)
-            .map((h) => el("li", { text: h })),
-        );
-        li.append(ul);
-      }
+      const rolesWrap = el("div", { class: "companyRoles" });
 
+      g.roles.forEach((p) => {
+        const title = String(p?.title ?? "").trim();
+        const start = String(p?.start ?? "").trim();
+        const end = String(p?.end ?? "").trim();
+        const highlights = Array.isArray(p?.highlights) ? p.highlights : [];
+
+        const dateText = [formatDate(start), formatDate(end)]
+          .filter(Boolean)
+          .join(" — ");
+
+        const row = el("div", { class: "roleRow" }, [
+          el("div", { class: "roleDates", text: dateText }),
+          el("div", { class: "roleMain" }, [
+            el("div", { class: "roleTitle", text: title || "Role" }),
+          ]),
+        ]);
+
+        if (highlights.length > 0) {
+          const ul = el(
+            "ul",
+            { class: "highlights" },
+            highlights
+              .map((h) => String(h ?? "").trim())
+              .filter(Boolean)
+              .map((h) => el("li", { text: h })),
+          );
+          row.querySelector(".roleMain")?.append(ul);
+        }
+
+        rolesWrap.append(row);
+      });
+
+      li.append(rolesWrap);
       list.append(li);
     });
 
