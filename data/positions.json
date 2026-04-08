@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Engineering Manager",
+    "company": "Banzai",
+    "location": "Seattle, WA",
+    "start": "2026-04",
+    "end": "Present",
+    "highlights": [
+      "Lead a cross-functional engineering team to build and scale products and systems",
+      "Partner with Product & Design, support delivery, and mentor engineers"
+    ]
+  },
+  {
+    "title": "Senior Software Engineer",
+    "company": "Banzai",
+    "location": "Seattle, WA",
+    "start": "2025-06",
+    "end": "2026-04",
+    "highlights": [
+      "Developed and scaled core product features",
+      "Contributed to system architecture and technical direction",
+      "Supported team delivery via code reviews and mentorship"
+    ]
+  },
+  {
+    "title": "Company Owner & Software Engineer",
+    "company": "Kotei d.o.o.",
+    "location": "Zagreb, Croatia",
+    "start": "2024-07",
+    "end": "Present",
+    "highlights": [
+      "Founded and led a consultancy delivering scalable full-stack and blockchain solutions",
+      "Provided hands-on development, architectural guidance, and technical consulting"
+    ]
+  },
+  {
+    "title": "Senior Software Engineer",
+    "company": "ROKO Labs",
+    "location": "",
+    "start": "2023-03",
+    "end": "2025-02",
+    "highlights": [
+      "Developed high-performance SaaS platforms with React, Next.js, and GraphQL",
+      "Built scalable and maintainable front-end architectures"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "ROKO Labs",
+    "location": "",
+    "start": "2022-01",
+    "end": "2023-03",
+    "highlights": [
+      "Worked on SaaS product development"
+    ]
+  },
+  {
+    "title": "Principal Engineer",
+    "company": "YieldBricks",
+    "location": "Dubai, United Arab Emirates",
+    "start": "2021-10",
+    "end": "2025-01",
+    "highlights": [
+      "Led development of a decentralized real estate investment platform (Web3/DeFi)",
+      "Designed high-performance APIs, scalable infrastructure, and real-time investment mechanisms"
+    ]
+  },
+  {
+    "title": "Back End Developer",
+    "company": "Serapion",
+    "location": "Zagreb, Croatia",
+    "start": "2021-03",
+    "end": "2021-10",
+    "highlights": [
+      "Developed backend systems with Node.js, NestJS, and PostgreSQL",
+      "Built RESTful APIs; integrated Firebase authentication; optimized database queries"
+    ]
+  },
+  {
+    "title": "Web Developer",
+    "company": "123 Design",
+    "location": "Zagreb, Croatia",
+    "start": "2016-02",
+    "end": "2021-03",
+    "highlights": [
+      "Designed and developed responsive web applications across industries",
+      "Managed client relationships, project planning, and front-end development"
+    ]
+  },
+  {
+    "title": "Volunteer manager",
+    "company": "Volonterski centar Link",
+    "location": "Križevci, Croatia",
+    "start": "2015-10",
+    "end": "2017-01",
+    "highlights": [
+      "Coordinating volunteers; NGO administration; management trainer"
+    ]
+  },
+  {
+    "title": "Logistics Advisor",
+    "company": "Alero",
+    "location": "Zagreb, Croatia",
+    "start": "2014-03",
+    "end": "2015-10",
+    "highlights": [
+      "Business planning and proposals for national/EU funding; marketing and PR"
+    ]
+  },
+  {
+    "title": "Co-Founder and Secretary general",
+    "company": "Centar za mlade Križevci",
+    "location": "Križevci, Croatia",
+    "start": "2008-12",
+    "end": "2014-03",
+    "highlights": [
+      "Drafted project proposals and funding applications; organized events; handled administration"
+    ]
+  }
+]
