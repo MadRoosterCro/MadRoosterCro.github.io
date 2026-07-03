@@ -40,6 +40,7 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -449,11 +450,18 @@ main {
   }
 
   .navInner {
-    padding: 20px var(--pad-x);
+    padding: 18px var(--pad-x);
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+
+  .wordmark {
+    white-space: nowrap;
   }
 
   .navLinks {
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 16px 18px;
   }
 
   .hero {
@@ -474,7 +482,7 @@ main {
   .about,
   .experience {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .aboutStatement {
@@ -493,5 +501,57 @@ main {
 
   .contactBig {
     font-size: 36px;
+  }
+}
+
+@media (max-width: 560px) {
+  .navInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .navLinks {
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+  }
+
+  .heroLead {
+    font-size: 16px;
+  }
+
+  .speclneWrap {
+    padding: 16px var(--pad-x) 0;
+  }
+
+  .speclne {
+    padding: 26px 22px;
+  }
+
+  .speclneHead {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .speclneTitle {
+    font-size: 36px;
+  }
+
+  .aboutStatement {
+    font-size: 22px;
+  }
+
+  /* Stack role and date so the title has room on narrow screens. */
+  .xpHeadTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .contactBig {
+    font-size: 30px;
   }
 }
