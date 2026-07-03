@@ -6,112 +6,130 @@
     <title>Dario Car</title>
     <meta
       name="description"
-      content="Dario Car — recent positions and contact."
+      content="Dario Car — engineering manager and full-stack engineer."
     />
 
     <meta property="og:title" content="Dario Car" />
-    <meta property="og:description" content="Recent positions and contact." />
+    <meta
+      property="og:description"
+      content="Engineering manager and full-stack engineer."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Libre+Franklin:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./app.css" />
     <script defer src="./app.js"></script>
   </head>
   <body>
-    <header class="topbar">
-      <div class="container topbarInner">
-        <nav class="topnav" aria-label="Primary navigation">
+    <header class="nav">
+      <div class="navInner">
+        <a class="wordmark" href="#top">Dario Car</a>
+        <nav class="navLinks" aria-label="Primary navigation">
+          <a class="navLink" href="#experience">Experience</a>
+          <a class="navLink" href="#speclne">SpecLine</a>
+          <a class="navLink" href="#contact">Contact</a>
           <a
-            class="toplink"
+            class="navLink navResume"
             href="./files/Dario-Car-Resume.pdf"
             download="Dario-Car-Resume.pdf"
             type="application/pdf"
+            >Resume ↗</a
           >
-            Resume
-          </a>
-          <a class="toplink" href="#resume">Experience</a>
-          <a class="toplink" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="heroTitle">
-        <div class="container heroInner">
-          <aside class="profileCard" aria-label="Profile card">
-            <img
-              class="profileAvatar"
-              src="./images/dario.png"
-              alt="Portrait of Dario Car"
-              loading="lazy"
-            />
-            <div class="profileName">Dario Car</div>
-            <div class="profileRole">Engineering Manager</div>
-          </aside>
+    <main id="top">
+      <section class="hero">
+        <div class="heroCopy" data-reveal>
+          <p class="kicker">Engineering Manager · Full-stack</p>
+          <h1 class="heroTitle">Let’s build<br />great <em>products.</em></h1>
+          <p class="heroLead">
+            I’m an engineering manager and full-stack engineer with experience
+            across front-end and back-end development — shipping scalable
+            systems, leading teams, and raising the quality bar.
+          </p>
+          <div class="heroCtas">
+            <a class="btn btnPrimary" href="#contact">Get in touch</a>
+            <a
+              class="btn btnSecondary"
+              href="./files/Dario-Car-Resume.pdf"
+              download="Dario-Car-Resume.pdf"
+              type="application/pdf"
+              >Download resume</a
+            >
+          </div>
+        </div>
+        <div class="heroPortrait" data-reveal>
+          <img
+            src="./images/dario.png"
+            alt="Portrait of Dario Car"
+            width="2048"
+            height="1664"
+          />
+        </div>
+      </section>
 
-          <div class="heroCopy">
-            <h1 id="heroTitle" class="heroTitle">
-              Let’s build great products.
-            </h1>
-            <p class="heroLead">
-              I’m an engineering manager and a full-stack engineer with
-              experience across front-end and back-end development, shipping
-              scalable systems, leading teams, and raising the quality bar.
-            </p>
-            <div class="heroCtas">
-              <a class="ctaPrimary" href="mailto:dario.car.kz@gmail.com"
-                >Email</a
-              >
-              <a
-                class="ctaSecondary"
-                href="https://www.linkedin.com/in/dario-car/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
-            </div>
+      <section class="about" data-reveal>
+        <p class="sectionLabel">A bit about me</p>
+        <p class="aboutStatement">
+          I like the messy middle — the part where a vague idea turns into a
+          shipped thing. I care about clarity, about teams that trust each
+          other, and about tools that make good engineering feel effortless.
+        </p>
+      </section>
+
+      <section class="speclneWrap" id="speclne">
+        <div class="speclne" data-reveal>
+          <div class="speclneHead">
+            <span class="speclneLabel">Currently building</span>
+            <span class="speclneMeta">private · open-sourcing soon</span>
+          </div>
+          <h2 class="speclneTitle">SpecLine</h2>
+          <p class="speclneBody">
+            A plugin for Claude &amp; Codex that keeps AI coding agents anchored
+            to a living spec — turning loose prompts into reviewable, structured
+            engineering work. The repo goes public soon.
+          </p>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <p class="sectionLabel" data-reveal>Experience</p>
+        <div class="experienceContent">
+          <div id="positions" aria-live="polite">
+            <p class="muted">Loading…</p>
           </div>
         </div>
       </section>
 
-      <section id="resume" class="section" aria-labelledby="positionsTitle">
-        <div class="container">
-          <h2 id="positionsTitle" class="sectionTitle">Resume</h2>
-          <div class="resumeGrid">
-            <div class="resumeLabel">Work experience</div>
-            <div class="resumeContent">
-              <div id="positions" class="stack" aria-live="polite">
-                <p class="muted">Loading…</p>
-              </div>
-              <div class="actions">
-                <a id="loadMore" class="loadMore" href="#" hidden>Show more</a>
-              </div>
-            </div>
-          </div>
+      <section class="contact" id="contact" data-reveal>
+        <div class="contactLeft">
+          <p class="sectionLabel">Let’s talk</p>
+          <a class="contactBig" href="mailto:dario.car.kz@gmail.com"
+            >Say hello <span class="contactArrow">→</span></a
+          >
+        </div>
+        <div class="contactRight">
+          <a
+            class="navLink"
+            href="./files/Dario-Car-Resume.pdf"
+            download="Dario-Car-Resume.pdf"
+            type="application/pdf"
+            >Resume ↗</a
+          >
         </div>
       </section>
-
-      <footer id="contact" class="footer" aria-label="Footer">
-        <div class="container footerInner">
-          <div class="footerLinks">
-            <a
-              class="footerIcon"
-              href="mailto:dario.car.kz@gmail.com"
-              aria-label="Email"
-              >Email</a
-            >
-            <a
-              class="footerIcon"
-              href="https://www.linkedin.com/in/dario-car/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              LinkedIn
-            </a>
-          </div>
-          <div class="footerYear">© <span id="year"></span></div>
-        </div>
-      </footer>
     </main>
+
+    <footer class="footer">
+      <span>© Dario Car</span>
+      <span>Built with care · <span id="year">2026</span></span>
+    </footer>
   </body>
 </html>

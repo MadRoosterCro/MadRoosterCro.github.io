@@ -1,118 +1,118 @@
 [
   {
-    "title": "Engineering Manager",
-    "company": "Banzai",
-    "location": "Seattle, WA",
-    "start": "2026-04",
+    "employer": "Kotei d.o.o.",
+    "role": "Owner & Consultant",
+    "start": "2024-06",
     "end": "Present",
-    "highlights": [
-      "Lead a cross-functional engineering team to build and scale products and systems",
-      "Partner with Product & Design, support delivery, and mentor engineers"
+    "engagements": [
+      {
+        "client": "breezesim.com",
+        "title": "Tech Lead",
+        "location": "London, UK",
+        "description": "Leading the greenfield native mobile app effort while maintaining and improving the existing web app and delivery processes.",
+        "stack": [
+          "React Native",
+          "Shopify",
+          "Klaviyo",
+          "eSIM/GSMA APIs",
+          "AWS",
+          "Cloudflare"
+        ]
+      },
+      {
+        "client": "banzai.io",
+        "title": "Engineering Manager",
+        "location": "Seattle, US",
+        "description": "Led a cross-functional team building data-driven marketing & sales products.",
+        "stack": ["Next.js", "TypeScript", "tRPC", "MongoDB", "CircleCI", "AWS"]
+      },
+      {
+        "client": "tiketti.fi",
+        "title": "Senior Software Engineer",
+        "location": "Helsinki, FI",
+        "description": "Built a no-code page builder for an event-ticketing platform.",
+        "stack": [
+          "Next.js",
+          "HonoJS",
+          "PostgreSQL",
+          "Cloudflare",
+          "AWS",
+          "Terraform",
+          "Shadcn"
+        ]
+      },
+      {
+        "client": "VytalAssets.com",
+        "title": "Frontend Team Lead",
+        "location": "Boston, MA",
+        "description": "Led a distributed frontend architecture for a US healthcare SaaS.",
+        "stack": [
+          "React",
+          "React-Query",
+          "GraphQL",
+          "Zustand",
+          "MUI",
+          "SignalR"
+        ]
+      }
     ]
   },
   {
-    "title": "Senior Software Engineer",
-    "company": "Banzai",
-    "location": "Seattle, WA",
-    "start": "2025-06",
-    "end": "2026-04",
-    "highlights": [
-      "Developed and scaled core product features",
-      "Contributed to system architecture and technical direction",
-      "Supported team delivery via code reviews and mentorship"
-    ]
-  },
-  {
-    "title": "Company Owner & Software Engineer",
-    "company": "Kotei d.o.o.",
-    "location": "Zagreb, Croatia",
-    "start": "2024-07",
-    "end": "Present",
-    "highlights": [
-      "Founded and led a consultancy delivering scalable full-stack and blockchain solutions",
-      "Provided hands-on development, architectural guidance, and technical consulting"
-    ]
-  },
-  {
-    "title": "Senior Software Engineer",
-    "company": "ROKO Labs",
-    "location": "",
-    "start": "2023-03",
-    "end": "2025-02",
-    "highlights": [
-      "Developed high-performance SaaS platforms with React, Next.js, and GraphQL",
-      "Built scalable and maintainable front-end architectures"
-    ]
-  },
-  {
-    "title": "Software Engineer",
-    "company": "ROKO Labs",
-    "location": "",
-    "start": "2022-01",
-    "end": "2023-03",
-    "highlights": ["Worked on SaaS product development"]
-  },
-  {
-    "title": "Principal Engineer",
-    "company": "YieldBricks",
-    "location": "Dubai, United Arab Emirates",
+    "employer": "BitLegion",
+    "role": "Senior Software Engineer",
+    "note": "Contract",
     "start": "2021-10",
-    "end": "2025-01",
-    "highlights": [
-      "Led development of a decentralized real estate investment platform (Web3/DeFi)",
-      "Designed high-performance APIs, scalable infrastructure, and real-time investment mechanisms"
+    "end": "2024-07",
+    "engagements": [
+      {
+        "client": "YieldBricks",
+        "title": "Principal Engineer",
+        "description": "On-chain real-estate tokenization platform.",
+        "stack": [
+          "Next.js",
+          "Zustand",
+          "Tailwind",
+          "Zod",
+          "AWS",
+          "Wagmi",
+          "Framer Motion"
+        ]
+      },
+      {
+        "client": "TradeLocker",
+        "title": "Senior Software Engineer",
+        "description": "Frontend architecture and UI for a trading platform.",
+        "stack": ["Next.js", "React-Query", "Zod", "ChakraUI", "Amplitude"]
+      },
+      {
+        "client": "NFraction",
+        "title": "Software Engineer",
+        "description": "Designed and built an NFT-minting platform with analytics tracking.",
+        "stack": ["React", "Redux", "Amplitude", "Tailwind"]
+      }
     ]
   },
   {
-    "title": "Back End Developer",
-    "company": "Serapion",
-    "location": "Zagreb, Croatia",
+    "employer": "Serapion GmbH",
+    "role": "Back-End Developer",
     "start": "2021-03",
     "end": "2021-10",
-    "highlights": [
-      "Developed backend systems with Node.js, NestJS, and PostgreSQL",
-      "Built RESTful APIs; integrated Firebase authentication; optimized database queries"
+    "description": "Back-end services and daily delivery.",
+    "stack": [
+      "Node.js",
+      "NestJS",
+      "Firebase",
+      "MongoDB",
+      "PostgreSQL",
+      "RabbitMQ"
     ]
   },
   {
-    "title": "Web Developer",
-    "company": "123 Design",
-    "location": "Zagreb, Croatia",
+    "employer": "123 Design",
+    "role": "Front-End Web Developer",
     "start": "2016-02",
     "end": "2021-03",
-    "highlights": [
-      "Designed and developed responsive web applications across industries",
-      "Managed client relationships, project planning, and front-end development"
-    ]
-  },
-  {
-    "title": "Volunteer manager",
-    "company": "Volonterski centar Link",
-    "location": "Križevci, Croatia",
-    "start": "2015-10",
-    "end": "2017-01",
-    "highlights": [
-      "Coordinating volunteers; NGO administration; management trainer"
-    ]
-  },
-  {
-    "title": "Logistics Advisor",
-    "company": "Alero",
-    "location": "Zagreb, Croatia",
-    "start": "2014-03",
-    "end": "2015-10",
-    "highlights": [
-      "Business planning and proposals for national/EU funding; marketing and PR"
-    ]
-  },
-  {
-    "title": "Co-Founder and Secretary general",
-    "company": "Centar za mlade Križevci",
-    "location": "Križevci, Croatia",
-    "start": "2008-12",
-    "end": "2014-03",
-    "highlights": [
-      "Drafted project proposals and funding applications; organized events; handled administration"
-    ]
+    "description": "Planned, built and presented client websites end to end.",
+    "stack": ["React", "Angular", "CMS platforms"]
   }
 ]

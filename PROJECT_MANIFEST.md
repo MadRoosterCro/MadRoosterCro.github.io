@@ -7,8 +7,9 @@ On conflict: this file wins on project facts; `CLAUDE.md` wins on process.
 
 ## 1. Project Overview
 
-- **Purpose:** Personal CV / portfolio site for Dario Car. Presents a profile
-  card, intro, a data-driven work-experience list, and contact links.
+- **Purpose:** Personal CV / portfolio site for Dario Car. Editorial one-pager:
+  sticky nav, hero (portrait + statement), an "about" note, a featured-project
+  card (SpecLine), a data-driven experience list, and a mailto contact band.
 - **Primary users:** Recruiters, hiring managers, and professional contacts
   visiting the public site.
 - **Load-bearing constraint:** Served as static files by GitHub Pages at the
@@ -46,13 +47,19 @@ Adding either requires user approval and a manifest update.
   fetches `data/positions.json` and renders the experience list into the DOM.
 - **Layers:**
   - `index.html` — page structure and static content.
-  - `app.css` — presentation (CSS custom properties, `color-scheme: light dark`).
-  - `app.js` — data fetch, formatting, grouping, and pagination logic.
+  - `app.css` — presentation: design tokens (`:root` custom properties), layout
+    grids, typography (three Google Fonts), hover motion, scroll-reveal states,
+    responsive rules.
+  - `app.js` — data fetch, year-range formatting, experience-row rendering, and
+    the IntersectionObserver scroll-reveal.
   - `data/positions.json` — content data (work positions).
 - **Dependency direction:** `app.js` depends on the DOM ids/classes in
   `index.html` and the shape of `data/positions.json`. No reverse dependency.
 - **Concurrency/async:** Single async `load()` on `DOMContentLoaded`; one
-  `fetch` for positions with try/catch fallback UI.
+  `fetch` for positions with try/catch fallback UI; an IntersectionObserver
+  reveals `[data-reveal]` elements once on scroll (immediate-reveal fallback).
+- **External resources:** Google Fonts (Instrument Serif, Libre Franklin, Space
+  Mono) loaded from `fonts.googleapis.com` per visit.
 - **Deployment:** Push to `main` on GitHub triggers GitHub Pages publish.
   `_config.yml` sets a Jekyll theme, but the live page is hand-authored static
   HTML rather than Jekyll-templated content.
@@ -78,38 +85,47 @@ Adding either requires user approval and a manifest update.
 
 ## 5. Key Modules & Components
 
-- `index.html` — Page shell: topbar nav, hero (profile card + intro + CTAs),
-  `#resume` section with `#positions` container and `#loadMore` control, footer
-  with `#year`. Contract: exposes ids `positions`, `loadMore`, `year` consumed
+- `index.html` — Page shell: sticky nav, hero (portrait + CTAs), about, the
+  SpecLine card (`#speclne`), experience (`#experience`) with `#positions`
+  container, mailto contact band (`#contact`), footer with `#year`. Sections
+  carry `data-reveal` hooks. Contract: exposes ids `positions`, `year` consumed
   by `app.js`.
 - `app.js` — IIFE, `"use strict"`. Fetches `POSITIONS_URL`
-  (`./data/positions.json`), paginates by `PAGE_SIZE = 5`, groups
-  *consecutive* roles sharing company + location, renders an ordered company
-  list with per-role highlights, and wires the "Show more" control. Sets the
-  footer year. Fails to a "Positions unavailable" message on fetch error.
-- `data/positions.json` — Array of position objects: `title`, `company`,
-  `location`, `start` (`YYYY-MM`), `end` (`YYYY-MM` or `Present`),
-  `highlights` (string array). 11 entries as of adoption. Order is newest-first
-  and drives display order and grouping.
-- `app.css` — Design tokens via `:root` custom properties; light/dark aware.
+  (`./data/positions.json`) and renders one group per employer: a header (role,
+  employer + optional note, month-year range via `formatMonth`) followed by
+  either nested client engagements (`renderEngagement`: client, title·location,
+  description, tech stack) or a direct description + stack. Sets the footer year
+  and runs `createRevealer()` — an IntersectionObserver (threshold 0.15,
+  staggered) that also observes the dynamically added groups. Fails to a
+  "Positions unavailable" message on fetch error.
+- `data/positions.json` — Array of employer objects: `employer`, `role`,
+  optional `note` (e.g. "Contract"), `start`/`end` (`YYYY-MM` or `Present`),
+  and either an `engagements` array (`client`, `title`, `location`,
+  `description`, `stack[]`) or a top-level `description` + `stack[]`. Mirrors
+  the CV. Order is newest-first and drives display order.
+- `app.css` — Design tokens via `:root` custom properties; warm editorial
+  palette, three type families, scroll-reveal + hover motion, `≤800px` layout.
 
 ## 6. State & Data Flow
 
 - **Content source:** `data/positions.json`, fetched at runtime with
   `cache: "no-cache"`.
 - **Lifecycle:** `load()` runs on `DOMContentLoaded` (or immediately if the DOM
-  is ready) → fetch JSON → `renderPositions()` with a `visibleCount` →
-  "Show more" increments `visibleCount` by `PAGE_SIZE` and re-renders.
-- **State:** In-memory only (`visibleCount`); no persistence, storage, cookies,
-  or navigation state.
+  is ready) → sets footer year → binds the reveal observer to static
+  `[data-reveal]` elements → fetch JSON → `renderPositions()` appends all rows →
+  observer re-binds to the new rows.
+- **State:** None persisted; no storage, cookies, or navigation state. Reveal
+  state is per-element (revealed once, then unobserved).
 - **Error propagation:** Fetch/parse failures are caught; the UI shows a
-  fallback message, the "Show more" control is hidden, and the error is logged
-  via `console.warn`.
+  fallback message and the error is logged via `console.warn`.
 
 ## 7. Dependencies
 
 - **Core toolchain:** `npm` (dev only) hosting the formatter.
-- **Runtime dependencies (live page):** None. `app.js` uses only browser APIs.
+- **Runtime dependencies (live page):** None bundled. `app.js` uses only
+  browser APIs.
+- **External resources:** Google Fonts (Instrument Serif, Libre Franklin, Space
+  Mono) loaded from `fonts.googleapis.com` / `fonts.gstatic.com` at runtime.
 - **Dev dependencies:** `prettier` (formatter). Not shipped to the page.
 - **Removed:** the vendored legacy template stack (jQuery, Bootstrap,
   FlexSlider, Owl Carousel, Waypoints, countTo, Modernizr, Respond.js, icomoon)
@@ -131,7 +147,7 @@ Adding either requires user approval and a manifest update.
 ## 9. Conventions
 
 - **Naming:** camelCase CSS class names and DOM ids in the live page (e.g.
-  `heroInner`, `companyList`, `loadMore`). Data keys are lowercase.
+  `heroCopy`, `xpRow`, `speclne`). Data keys are lowercase.
 - **Formatting:** Enforced by Prettier (`.prettierrc`): 2-space indentation,
   double-quoted strings, semicolons, 80-col print width. Run `npm run format`.
 - **File organization:** Live page kept as three root files (`index.html`,
@@ -140,7 +156,8 @@ Adding either requires user approval and a manifest update.
 - **Error handling:** Guard DOM lookups and data shapes defensively; degrade to
   a visible fallback rather than throwing.
 - **Logging:** `console.warn` for non-fatal runtime issues only.
-- **Localization:** English only. Dates rendered via `Intl.DateTimeFormat`.
+- **Localization:** English only. Experience dates rendered month-year via
+  `formatMonth` (`Present`/`Now` → "Present").
 
 Cross-project rules (always apply):
 
