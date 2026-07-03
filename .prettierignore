@@ -1,0 +1,14 @@
+# Generated / vendored
+node_modules/
+package-lock.json
+
+# Binary assets
+files/
+images/
+
+# Workflow artifacts owned by Specline skills (hand-formatted; do not rewrite)
+CLAUDE.md
+AGENTS.md
+PROJECT_MANIFEST.md
+README.md
+documentation/

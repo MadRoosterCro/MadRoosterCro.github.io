@@ -1,0 +1,13 @@
+{
+  "name": "madroostercro-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal CV / portfolio site for Dario Car.",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.9.4"
+  }
+}
